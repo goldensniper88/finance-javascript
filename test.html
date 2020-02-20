@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Financial</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/nouislider.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/styletest.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/rangeslider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="grey_background">
+       <div class ="section_1">
+           <div class="title"> How much will it cost you?
+               <p>See for yourself how financing your halal home with Manzil compares to other lenders.</p>
+           </div>
+           <div class="input_value">
+                <div class="slider_control">
+                    <div class="slider_title">Purchase Price</div>
+                    <div class="slider_value slider_price">$500,000</div>
+                    <input type="text" name="currency-field" id="purchase-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency">
+                    <div id="slider_price_range"></div>
+                </div>
+                <div class="slider_control">
+                    <div class="slider_title">Down Payment</div>
+                    <div class="slider_value payment_value">$100,000</div>
+                    <input type="text" name="currency-field" id="down-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency">
+                    <div id="slider_payment_range"></div>
+                </div>
+                <div class="slider_control">
+                    <div class="slider_title">Term</div>
+                    <div class="slider_value term_value">25 Years</div>
+                    <div id="slider_term_range"></div>
+                </div>
+                <div class="slider_control">
+                    <div class="slider_title">Payment Frequency</div>
+                    <div class="slider_value payment_frequency">Monthly</div>
+                    <div id="slider_payment_frequency"></div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class = "details">
+                <div class ="details_value">
+                    <div class = "details_unit">
+                        
+                    </div>
+                </div>
+            </div>
+       </div> 
+    </div>
+</body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="assets/js/rangeslider.min.js"></script>
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script src="assets/js/nouislider.min.js"></script>
+<script>
+    let slider_price_range = document.getElementById('slider_price_range');
+
+    noUiSlider.create(slider_price_range, {
+        start: [50],
+        connect: [true, false],
+        range: {
+            'min': 0,
+            'max': 500
+        },
+        step: 1,
+        format: {
+            from: function(value) {
+                return Math.round(+value);
+            },
+            to: function(value) {
+                return Math.round(+value);
+            }
+        }
+    });
+
+    let slider_payment_range = document.getElementById('slider_payment_range');
+
+    noUiSlider.create(slider_payment_range, {
+        start: [100],
+        connect: [true, false],
+        range: {
+            'min': 0,
+            'max': 1000
+        },
+        step: 10,
+        format: {
+            from: function(value) {
+                return Math.round(+value);
+            },
+            to: function(value) {
+                return Math.round(+value);
+            }
+        }
+    });
+
+    let slider_term_range = document.getElementById('slider_term_range');
+
+    noUiSlider.create(slider_term_range, {
+        start: [25],
+        connect: [true, false],
+        range: {
+            'min': 1,
+            'max': 25
+        },
+        step: 1,
+        format: {
+            from: function(value) {
+                return Math.round(+value);
+            },
+            to: function(value) {
+                return Math.round(+value);
+            }
+        }
+    });
+
+    let slider_payment_frequency = document.getElementById('slider_payment_frequency');
+
+    noUiSlider.create(slider_payment_frequency, {
+        start: [1],
+        connect: [true, false],
+        range: {
+            'min': 1,
+            'max': 4
+        },
+        step: 1,
+        format: {
+            from: function(value) {
+                return Math.round(+value);
+            },
+            to: function(value) {
+                return Math.round(+value);
+            }
+        }
+    });
+
+</script>
