@@ -75,6 +75,47 @@
             <p>As you see above, If we’re looking at an <b>“Apples to Apples”</b> comparison, it is in fact cheaper to finance your home with Manzil.</p>
        </div> 
     </div>
+    <div class = "section_2">
+        <div class ="title">How much Halal Money<br>Can You Make?</div>
+        <div class = "input_value">
+            <div class="slider_control">
+                <div class="slider_title">Initial deposit</div>
+                <div class="slider_value initial_value">$50,000</div>
+                <input type="text" name="currency-field" id="initial-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency">
+                <div id="slider_initial_range"></div>
+            </div>
+            <div class="slider_control">
+                <div class="slider_title">Monthly deposit</div>
+                <div class="slider_value monthly_value">$1,000</div>
+                <input type="text" name="currency-field" id="monthly-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency">
+                <div id="slider_monthly_range"></div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class= "details_value">
+            <div class ="details_unit">
+                <div class= "shape1"></div>
+                <div class = "values">
+                    <p>Manzil Halal Investing<span><i class="fa fa-info-circle"></i></span></p>
+                    <p class="manzil_investing">$862,038</p>
+                </div>
+            </div>
+            <div class="details_unit">
+                <div class="shape2"></div>
+                <div class="values">
+                    <p class="thin">Traditional Savings<span><i class="fa fa-info-circle"></i></span></p>
+                    <p class="traditional_savings">$648,393</p>
+                </div>
+            </div>
+            <div class="details_unit">
+                <div class="shape3"></div>
+                <div class="values">
+                    <p class="thin">Traditional Investing<span><i class="fa fa-info-circle"></i></span></p>
+                    <p class="traditional_investing">$513,387</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -162,4 +203,43 @@
         }
     });
 
+    let slider_initial_range = document.getElementById('slider_initial_range');
+
+    noUiSlider.create(slider_initial_range, {
+        start: [100],
+        connect: [true, false],
+        range: {
+            'min': 1,
+            'max': 2000
+        },
+        step: 1,
+        format: {
+            from: function(value) {
+                return Math.round(+value);
+            },
+            to: function(value) {
+                return Math.round(+value);
+            }
+        }
+    });
+
+    let slider_monthly_range = document.getElementById('slider_monthly_range');
+
+    noUiSlider.create(slider_monthly_range, {
+        start: [40],
+        connect: [true, false],
+        range: {
+            'min': 1,
+            'max': 1000
+        },
+        step: 1,
+        format: {
+            from: function(value) {
+                return Math.round(+value);
+            },
+            to: function(value) {
+                return Math.round(+value);
+            }
+        }
+    });
 </script>
