@@ -245,4 +245,24 @@
             }
         }
     });
+	
+	let slider_monthly_range = document.getElementById('slider_monthly_range');
+
+    noUiSlider.create(slider_monthly_range, {
+        start: [40],
+        connect: [true, false],
+        range: {
+            'min': 1,
+            'max': 1000
+        },
+        step: 1,
+        format: {
+            from: function(value) {
+                return Math.round(+value);
+            },
+            to: function(value) {
+                return Math.round(+value);
+            }
+        }
+    });
 </script>
